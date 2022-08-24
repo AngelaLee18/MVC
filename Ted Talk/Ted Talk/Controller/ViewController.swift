@@ -22,18 +22,14 @@ class ViewController: UIViewController {
             self.activityIndicator.startAnimating()
         }
         
-        func getDataFromBackend(completionHandler: @escaping() -> Void) {
+        /*func getDataFromBackend(completionHandler: @escaping() -> Void) {
             DispatchQueue.global(qos: .background).async {
-                self.tableViewData = Parse().parseTedTalk("tedTalks")
+                self.tableViewData = Parse().parseTedTalk("tedTalks",tableViewData)
                 DispatchQueue.main.async {
                     completionHandler()
                 }
             }
-        }
-        
-
+        }*/
     }
-
-
 }
 

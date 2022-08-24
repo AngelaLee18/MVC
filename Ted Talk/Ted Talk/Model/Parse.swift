@@ -9,21 +9,25 @@ import Foundation
 
 public class Parse {
     
-    func parseTedTalk(_ tedTalks: String) -> [TedTalkData] {
-        
-        if let fileLocation = Bundle.main.url(forResource: tedTalks, withExtension: "json") {
-            do {
-                let jsonData = try Data(contentsOf: fileLocation)
-                let jsonDecoder = JSONDecoder()
-                let dataFromJson = try jsonDecoder.decode([TedTalkData].self, from:jsonData )
-                return dataFromJson
+    func parseTedTalk(_ tedTalks: String, _ completion: @escaping (Result<[TedTalkData], Error>) -> Void ) {
+        DispatchQueue.global(qos: .background).async {
+            if let fileLocation = Bundle.main.url(forResource: tedTalks, withExtension: "json") {
+                do {
+                    let jsonData = try Data(contentsOf: fileLocation)
+                    let jsonDecoder = JSONDecoder()
+                    let dataFromJson = try jsonDecoder.decode([TedTalkData].self, from:jsonData )
+                    completion(.success(dataFromJson))
 
-            } catch {
-                print("Error: \(error)")
-                return []
+                } catch {
+                    print("Error: \(error)")
+                    completion(.failure(error))
+                }
+            } else {
+                completion(.success([]))
             }
-        } else {
-            return []
+
         }
     }
+
 }
+
