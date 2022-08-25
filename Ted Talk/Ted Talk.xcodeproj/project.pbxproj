@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1065AEF228B7F288004176D2 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1065AEF128B7F288004176D2 /* DataManager.swift */; };
 		1075213028B555CE009B90F2 /* TedTalkData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1075212F28B555CE009B90F2 /* TedTalkData.swift */; };
 		1075213228B556E5009B90F2 /* Parse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1075213128B556E5009B90F2 /* Parse.swift */; };
 		B3F949BC266A727C00D626BB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F949BB266A727C00D626BB /* AppDelegate.swift */; };
@@ -21,6 +22,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		1065AEE828B7C938004176D2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B3F949B0266A727C00D626BB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B3F949B7266A727C00D626BB;
+			remoteInfo = "Ted Talk";
+		};
 		B3F949CF266A728000D626BB /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = B3F949B0266A727C00D626BB /* Project object */;
@@ -38,6 +46,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1065AEE428B7C938004176D2 /* testParse.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = testParse.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1065AEF128B7F288004176D2 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		1075212F28B555CE009B90F2 /* TedTalkData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TedTalkData.swift; sourceTree = "<group>"; };
 		1075213128B556E5009B90F2 /* Parse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parse.swift; sourceTree = "<group>"; };
 		B3F949B8266A727C00D626BB /* Ted Talk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Ted Talk.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -58,6 +68,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		1065AEE128B7C938004176D2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B3F949B5266A727C00D626BB /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -104,6 +121,7 @@
 			children = (
 				1075212F28B555CE009B90F2 /* TedTalkData.swift */,
 				1075213128B556E5009B90F2 /* Parse.swift */,
+				1065AEF128B7F288004176D2 /* DataManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -124,6 +142,7 @@
 				B3F949B8266A727C00D626BB /* Ted Talk.app */,
 				B3F949CE266A728000D626BB /* Ted TalkTests.xctest */,
 				B3F949D9266A728000D626BB /* Ted TalkUITests.xctest */,
+				1065AEE428B7C938004176D2 /* testParse.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -172,6 +191,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		1065AEE328B7C938004176D2 /* testParse */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1065AEEA28B7C938004176D2 /* Build configuration list for PBXNativeTarget "testParse" */;
+			buildPhases = (
+				1065AEE028B7C938004176D2 /* Sources */,
+				1065AEE128B7C938004176D2 /* Frameworks */,
+				1065AEE228B7C938004176D2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1065AEE928B7C938004176D2 /* PBXTargetDependency */,
+			);
+			name = testParse;
+			productName = testParse;
+			productReference = 1065AEE428B7C938004176D2 /* testParse.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		B3F949B7266A727C00D626BB /* Ted Talk */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = B3F949E2266A728000D626BB /* Build configuration list for PBXNativeTarget "Ted Talk" */;
@@ -231,9 +268,13 @@
 		B3F949B0266A727C00D626BB /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1250;
+				LastSwiftUpdateCheck = 1340;
 				LastUpgradeCheck = 1250;
 				TargetAttributes = {
+					1065AEE328B7C938004176D2 = {
+						CreatedOnToolsVersion = 13.4.1;
+						TestTargetID = B3F949B7266A727C00D626BB;
+					};
 					B3F949B7266A727C00D626BB = {
 						CreatedOnToolsVersion = 12.5;
 					};
@@ -263,11 +304,19 @@
 				B3F949B7266A727C00D626BB /* Ted Talk */,
 				B3F949CD266A728000D626BB /* Ted TalkTests */,
 				B3F949D8266A728000D626BB /* Ted TalkUITests */,
+				1065AEE328B7C938004176D2 /* testParse */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		1065AEE228B7C938004176D2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B3F949B6266A727C00D626BB /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -296,6 +345,13 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		1065AEE028B7C938004176D2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B3F949B4266A727C00D626BB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -303,6 +359,7 @@
 				B3F949C0266A727C00D626BB /* ViewController.swift in Sources */,
 				1075213228B556E5009B90F2 /* Parse.swift in Sources */,
 				B3F949BC266A727C00D626BB /* AppDelegate.swift in Sources */,
+				1065AEF228B7F288004176D2 /* DataManager.swift in Sources */,
 				B3F949BE266A727C00D626BB /* SceneDelegate.swift in Sources */,
 				1075213028B555CE009B90F2 /* TedTalkData.swift in Sources */,
 			);
@@ -327,6 +384,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		1065AEE928B7C938004176D2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B3F949B7266A727C00D626BB /* Ted Talk */;
+			targetProxy = 1065AEE828B7C938004176D2 /* PBXContainerItemProxy */;
+		};
 		B3F949D0266A728000D626BB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = B3F949B7266A727C00D626BB /* Ted Talk */;
@@ -359,6 +421,44 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		1065AEEB28B7C938004176D2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.globant.testParse;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Ted Talk.app/Ted Talk";
+			};
+			name = Debug;
+		};
+		1065AEEC28B7C938004176D2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.globant.testParse;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Ted Talk.app/Ted Talk";
+			};
+			name = Release;
+		};
 		B3F949E0266A728000D626BB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -594,6 +694,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		1065AEEA28B7C938004176D2 /* Build configuration list for PBXNativeTarget "testParse" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1065AEEB28B7C938004176D2 /* Debug */,
+				1065AEEC28B7C938004176D2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		B3F949B3266A727C00D626BB /* Build configuration list for PBXProject "Ted Talk" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
