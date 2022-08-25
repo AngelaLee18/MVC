@@ -20,6 +20,9 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
         activityIndicator.hidesWhenStopped = true
         activityIndicator.startAnimating()
+        DataManager().getDataTedTalks { tedTalksData in
+            self.tableViewData = tedTalksData
+        }
         DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
             self.activityIndicator.stopAnimating()
         }
