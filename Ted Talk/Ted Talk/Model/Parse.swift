@@ -8,11 +8,15 @@
 import Foundation
 
 public class Parse {
+    enum ParseError: Error {
+        case fileNotFound
+        case parseError
+    }
     
-    func parseTedTalk(_ tedTalks: String, _ completion: @escaping (Result<[TedTalkData], Error>) -> Void ) {
+    func parseTedTalk(_ tedTalks: String, _ completion: @escaping (Result<[TedTalkData], ParseError>) -> Void ) {
         DispatchQueue.global(qos: .background).async {
             guard let fileLocation = Bundle.main.url(forResource: tedTalks, withExtension: "json") else {
-                return completion(.success([]))
+                return completion(.failure(.fileNotFound))
             }
             do {
                 let jsonData = try Data(contentsOf: fileLocation)
@@ -20,8 +24,7 @@ public class Parse {
                 let dataFromJson = try jsonDecoder.decode([TedTalkData].self, from:jsonData)
                     completion(.success(dataFromJson))
             } catch {
-                print("Error: \(error)")
-                completion(.failure(error))
+                completion(.failure(.parseError))
             }
         }
     }
