@@ -48,6 +48,16 @@
                ReferencedContainer = "container:Ted Talk.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "1065AEE328B7C938004176D2"
+               BuildableName = "testParse.xctest"
+               BlueprintName = "testParse"
+               ReferencedContainer = "container:Ted Talk.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
