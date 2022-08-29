@@ -22,10 +22,10 @@ class ViewController: UIViewController {
         activityIndicator.startAnimating()
         DataManager().getDataTedTalks { tedTalksData in
             self.tableViewData = tedTalksData
-        }
-        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
-            self.activityIndicator.stopAnimating()
-            self.tableView.reloadData()
+            DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+                self.activityIndicator.stopAnimating()
+                self.tableView.reloadData()
+            }
         }
     }
 }
@@ -44,5 +44,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
 }
+
+
 
 

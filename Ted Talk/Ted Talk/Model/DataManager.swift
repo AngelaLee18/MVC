@@ -7,6 +7,7 @@
 
 import Foundation
 
+//let json 
 public class DataManager {
     var tedTalks: [TedTalkData] = []
     func getDataTedTalks(completionHandler: @escaping ([TedTalkData]) -> Void) {
