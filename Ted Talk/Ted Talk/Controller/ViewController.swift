@@ -37,10 +37,10 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "showPlayList", for: indexPath) as?  PlayListCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "tedTalksCell", for: indexPath) as?  PlayListCell else {
             return UITableViewCell()
         }
-        cell.ShowPlaylistInformation(tableViewData[indexPath.row])
+        cell.ShowPlaylistInformation(.init(talk: tableViewData[indexPath.row]))
         return cell
     }
 }

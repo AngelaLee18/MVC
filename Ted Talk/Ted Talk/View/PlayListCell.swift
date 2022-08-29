@@ -12,7 +12,7 @@ class PlayListCell: UITableViewCell {
     @IBOutlet weak var title: UILabel!
     @IBOutlet weak var descrip: UILabel!
     
-    func ShowPlaylistInformation(_ recived: TedTalkData) {
+    func ShowPlaylistInformation(_ recived: TedTalksCellModel) {
         title.text = recived.title
         descrip.text = recived.description
     }
