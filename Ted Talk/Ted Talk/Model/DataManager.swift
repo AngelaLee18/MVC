@@ -9,17 +9,41 @@ import Foundation
 
 //let json 
 public class DataManager {
-    var tedTalks: [TedTalkData] = []
+    private var tedTalks: [TedTalkData] = []
     func getDataTedTalks(completionHandler: @escaping ([TedTalkData]) -> Void) {
-        Parse().parseTedTalk("tedTalks") { result in DispatchQueue.main.async {
+        Parse().parseTedTalk("tedTalks") { [weak self] result in DispatchQueue.main.async {
                 switch result {
                 case.success(let data):
-                    self.tedTalks = data
-                    completionHandler(self.tedTalks)
+                    self?.tedTalks = data
+                    completionHandler(data)
                 case.failure(_ ):
                     completionHandler([])
                 }
             }
         }
+    }
+    
+    func searchEnteredWord(searchText: String, picker: String) -> [TedTalkData] {
+        var filterData: [TedTalkData] = []
+        guard searchText != "" else {
+            return tedTalks
+        }
+        filterData = tedTalks.filter { talk in
+            switch picker {
+            case "Event":
+                return talk.event.lowercased().contains(searchText.lowercased())
+            case "Main speaker":
+                return talk.main_speaker.lowercased().contains(searchText.lowercased())
+            case "Title":
+                return talk.title.lowercased().contains(searchText.lowercased())
+            case "Name":
+                return talk.name.lowercased().contains(searchText.lowercased())
+            case "Description":
+                return talk.description.lowercased().contains(searchText.lowercased())
+            default:
+                return talk.event.lowercased().contains(searchText.lowercased()) || talk.main_speaker.lowercased().contains(searchText.lowercased()) || talk.title.lowercased().contains(searchText.lowercased()) || talk.name.lowercased().contains(searchText.lowercased()) || talk.description.lowercased().contains(searchText.lowercased())
+            }
+        }
+        return filterData
     }
 }
