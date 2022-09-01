@@ -81,9 +81,3 @@ extension ViewController: UISearchBarDelegate, UIPickerViewDataSource, UIPickerV
     }
 
 }
-
-
-
-
-
-
