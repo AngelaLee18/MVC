@@ -98,7 +98,7 @@
                                     </connections>
                                 </searchBar>
                                 <pickerView key="tableFooterView" contentMode="scaleToFill" id="sH5-Bx-5UA">
-                                    <rect key="frame" x="0.0" y="363.5" width="414" height="136"/>
+                                    <rect key="frame" x="0.0" y="318" width="414" height="136"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" systemColor="systemGray2Color"/>
                                     <connections>
@@ -113,18 +113,6 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="j69-0d-PTO" id="fKm-NG-IH3">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="90"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kVA-Qd-9Lx">
-                                                    <rect key="frame" x="187.5" y="34.5" width="39" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="kVA-Qd-9Lx" firstAttribute="centerX" secondItem="fKm-NG-IH3" secondAttribute="centerX" id="eqh-Ei-44P"/>
-                                                <constraint firstItem="kVA-Qd-9Lx" firstAttribute="centerY" secondItem="fKm-NG-IH3" secondAttribute="centerY" id="jjb-ge-2By"/>
-                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>

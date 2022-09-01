@@ -13,25 +13,23 @@ class ViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var pickerView: UIPickerView!
-    
+
     var tableViewData: [TedTalkData] = [] {
         didSet {
             tableView.reloadData()
         }
     }
-    //var filterData: [TedTalkData] = []
-    let pickerOptions = ["Event", "Main speaker", "Title", "Name", "Description", "All"]
-    //var searchWord: String = ""
+    var manager: DataManager = DataManager()
+    let pickerOptions = ["All", "Event", "Main speaker", "Title", "Name", "Description"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         activityIndicator.hidesWhenStopped = true
         activityIndicator.startAnimating()
-        DataManager().getDataTedTalks { tedTalksData in
+        manager.getDataTedTalks { tedTalksData in
             self.tableViewData = tedTalksData
             DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
                 self.activityIndicator.stopAnimating()
-                //self.tableView.reloadData()
             }
         }
     }
@@ -69,12 +67,17 @@ extension ViewController: UISearchBarDelegate, UIPickerViewDataSource, UIPickerV
         guard !(searchBar.text?.isEmpty ?? true) else {
             return
         }
-        tableViewData = DataManager().searchEnteredWord(searchText: searchBar.text ?? "", picker: pickerOptions[pickerView.selectedRow(inComponent: 0)])
+        tableViewData = callSearchenteredWord()
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        //searchWord = searchText
-        tableViewData = DataManager().searchEnteredWord(searchText: searchText, picker: pickerOptions[pickerView.selectedRow(inComponent: 0)])
+        tableViewData = callSearchenteredWord()
+    }
+    
+    func callSearchenteredWord() -> [TedTalkData] {
+        var result: [TedTalkData]
+        result = manager.searchEnteredWord(searchText: searchBar.text ?? "", picker: pickerOptions[pickerView.selectedRow(inComponent: 0)])
+        return result
     }
 
 }
