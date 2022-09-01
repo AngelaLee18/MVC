@@ -75,9 +75,8 @@ extension ViewController: UISearchBarDelegate, UIPickerViewDataSource, UIPickerV
     }
     
     func callSearchenteredWord() -> [TedTalkData] {
-        var result: [TedTalkData]
-        result = manager.searchEnteredWord(searchText: searchBar.text ?? "", picker: pickerOptions[pickerView.selectedRow(inComponent: 0)])
-        return result
+        return manager.searchEnteredWord(searchText: searchBar.text ?? "", picker: pickerOptions[pickerView.selectedRow(inComponent: 0)])
+        
     }
 
 }

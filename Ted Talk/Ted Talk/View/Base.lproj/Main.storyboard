@@ -98,7 +98,7 @@
                                     </connections>
                                 </searchBar>
                                 <pickerView key="tableFooterView" contentMode="scaleToFill" id="sH5-Bx-5UA">
-                                    <rect key="frame" x="0.0" y="317.5" width="414" height="136"/>
+                                    <rect key="frame" x="0.0" y="318" width="414" height="136"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" systemColor="systemGray2Color"/>
                                     <connections>
