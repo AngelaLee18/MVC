@@ -9,9 +9,11 @@
 /* Begin PBXBuildFile section */
 		1005202928B920A200A18ABD /* ParseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1065AEF328B7F779004176D2 /* ParseTest.swift */; };
 		1005202A28B940A100A18ABD /* test.json in Resources */ = {isa = PBXBuildFile; fileRef = 1065AEF928B7F9A6004176D2 /* test.json */; };
+		1005202C28B9465E00A18ABD /* PlayListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1005202B28B9465E00A18ABD /* PlayListCell.swift */; };
 		1065AEF228B7F288004176D2 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1065AEF128B7F288004176D2 /* DataManager.swift */; };
 		1075213028B555CE009B90F2 /* TedTalkData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1075212F28B555CE009B90F2 /* TedTalkData.swift */; };
 		1075213228B556E5009B90F2 /* Parse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1075213128B556E5009B90F2 /* Parse.swift */; };
+		10E0FD7628BCFF6D0063E24E /* TedTalksCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E0FD7528BCFF6D0063E24E /* TedTalksCellModel.swift */; };
 		B3F949BC266A727C00D626BB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F949BB266A727C00D626BB /* AppDelegate.swift */; };
 		B3F949BE266A727C00D626BB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F949BD266A727C00D626BB /* SceneDelegate.swift */; };
 		B3F949C0266A727C00D626BB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F949BF266A727C00D626BB /* ViewController.swift */; };
@@ -48,12 +50,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1005202B28B9465E00A18ABD /* PlayListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayListCell.swift; sourceTree = "<group>"; };
 		1065AEE428B7C938004176D2 /* testParse.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = testParse.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1065AEF128B7F288004176D2 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		1065AEF328B7F779004176D2 /* ParseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParseTest.swift; sourceTree = "<group>"; };
 		1065AEF928B7F9A6004176D2 /* test.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = test.json; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.json; };
 		1075212F28B555CE009B90F2 /* TedTalkData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TedTalkData.swift; sourceTree = "<group>"; };
 		1075213128B556E5009B90F2 /* Parse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parse.swift; sourceTree = "<group>"; };
+		10E0FD7528BCFF6D0063E24E /* TedTalksCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TedTalksCellModel.swift; sourceTree = "<group>"; };
 		B3F949B8266A727C00D626BB /* Ted Talk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Ted Talk.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3F949BB266A727C00D626BB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B3F949BD266A727C00D626BB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -108,6 +112,8 @@
 			children = (
 				B3F949C6266A728000D626BB /* LaunchScreen.storyboard */,
 				B3F949C1266A727C00D626BB /* Main.storyboard */,
+				1005202B28B9465E00A18ABD /* PlayListCell.swift */,
+				10E0FD7528BCFF6D0063E24E /* TedTalksCellModel.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -365,10 +371,12 @@
 			files = (
 				B3F949C0266A727C00D626BB /* ViewController.swift in Sources */,
 				1075213228B556E5009B90F2 /* Parse.swift in Sources */,
+				1005202C28B9465E00A18ABD /* PlayListCell.swift in Sources */,
 				B3F949BC266A727C00D626BB /* AppDelegate.swift in Sources */,
 				1065AEF228B7F288004176D2 /* DataManager.swift in Sources */,
 				B3F949BE266A727C00D626BB /* SceneDelegate.swift in Sources */,
 				1075213028B555CE009B90F2 /* TedTalkData.swift in Sources */,
+				10E0FD7628BCFF6D0063E24E /* TedTalksCellModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
