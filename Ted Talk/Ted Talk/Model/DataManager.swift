@@ -8,8 +8,12 @@
 import Foundation
 
 public class DataManager {
+    
     var fileName: String
     var tedTalks: [TedTalkData] = []
+    
+    //MARK: - Get data of TedTalks
+    
     func getDataTedTalks(completionHandler: @escaping ([TedTalkData]) -> Void) {
         Parse().parseTedTalk(fileName) { [weak self] result in DispatchQueue.main.async {
                 switch result {
@@ -25,7 +29,9 @@ public class DataManager {
     init(fileName: String = "tedTalks") {
         self.fileName = fileName
     }
-
+    
+    //MARK: - Filter
+    
     func searchEnteredWord(searchText: String, picker: String) -> [TedTalkData] {
         var filterData: [TedTalkData] = []
         guard searchText != "" else {

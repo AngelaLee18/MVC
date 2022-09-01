@@ -20,7 +20,11 @@ class ViewController: UIViewController {
         }
     }
     var manager: DataManager = DataManager()
-    let pickerOptions = ["All", "Event", "Main speaker", "Title", "Name", "Description"]
+    let pickerOptions = [
+        "All", "Event", "Main speaker", "Title", "Name", "Description"
+    ]
+    
+    //MARK: - View Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +38,8 @@ class ViewController: UIViewController {
         }
     }
 }
+
+// MARK: - UITableView Methods
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
     
@@ -49,6 +55,8 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
 }
+
+// MARK: - UISearchBar and UIPickerView Methods
 
 extension ViewController: UISearchBarDelegate, UIPickerViewDataSource, UIPickerViewDelegate {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -76,7 +84,5 @@ extension ViewController: UISearchBarDelegate, UIPickerViewDataSource, UIPickerV
     
     func callSearchenteredWord() -> [TedTalkData] {
         return manager.searchEnteredWord(searchText: searchBar.text ?? "", picker: pickerOptions[pickerView.selectedRow(inComponent: 0)])
-        
     }
-
 }
