@@ -39,8 +39,6 @@ public class DataManager {
         }
         filterData = tedTalks.filter { talk in
             switch picker {
-            case "All":
-                return talk.event.lowercased().contains(searchText.lowercased()) || talk.main_speaker.lowercased().contains(searchText.lowercased()) || talk.title.lowercased().contains(searchText.lowercased()) || talk.name.lowercased().contains(searchText.lowercased()) || talk.description.lowercased().contains(searchText.lowercased())
             case "Event":
                 return talk.event.lowercased().contains(searchText.lowercased())
             case "Main speaker":
@@ -53,7 +51,7 @@ public class DataManager {
                 return talk.description.lowercased().contains(searchText.lowercased())
                 
             default:
-                return talk.event.lowercased().contains(searchText.lowercased()) 
+                return talk.event.lowercased().contains(searchText.lowercased()) || talk.main_speaker.lowercased().contains(searchText.lowercased()) || talk.title.lowercased().contains(searchText.lowercased()) || talk.name.lowercased().contains(searchText.lowercased()) || talk.description.lowercased().contains(searchText.lowercased())
             }
         }
         return filterData
