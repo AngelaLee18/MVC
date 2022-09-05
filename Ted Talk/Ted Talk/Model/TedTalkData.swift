@@ -24,3 +24,4 @@ struct TedTalkData: Codable {
     var url: String
     var views: Int
 }
+

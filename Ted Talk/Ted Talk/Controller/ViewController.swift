@@ -11,24 +11,37 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet weak var pickerView: UIPickerView!
+
+    var tableViewData: [TedTalkData] = [] {
+        didSet {
+            tableView.reloadData()
+        }
+    }
+    var manager: DataManager = DataManager()
+    let pickerOptions = [
+        "All", "Event", "Main speaker", "Title", "Name", "Description"
+    ]
     
-    
-    var tableViewData: [TedTalkData] = []
+    //MARK: - View Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         activityIndicator.hidesWhenStopped = true
+        tableView.isHidden = true
         activityIndicator.startAnimating()
-        DataManager().getDataTedTalks { tedTalksData in
+        manager.getDataTedTalks { tedTalksData in
             self.tableViewData = tedTalksData
             DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
                 self.activityIndicator.stopAnimating()
-                self.tableView.reloadData()
+                self.tableView.isHidden = false
             }
         }
     }
 }
+
+// MARK: - UITableView Methods
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
     
@@ -45,6 +58,33 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     }
 }
 
+// MARK: - UISearchBar and UIPickerView Methods
 
-
-
+extension ViewController: UISearchBarDelegate, UIPickerViewDataSource, UIPickerViewDelegate {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return pickerOptions.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return pickerOptions[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        guard !(searchBar.text?.isEmpty ?? true) else {
+            return
+        }
+        tableViewData = callSearchenteredWord()
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        tableViewData = callSearchenteredWord()
+    }
+    
+    func callSearchenteredWord() -> [TedTalkData] {
+        return manager.searchEnteredWord(searchText: searchBar.text ?? "", picker: pickerOptions[pickerView.selectedRow(inComponent: 0)])
+    }
+}
