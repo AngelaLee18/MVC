@@ -12,16 +12,15 @@ class DetailViewController: UIViewController, WKUIDelegate {
 
     // MARK: - IBOutles
     @IBOutlet weak var titleD: UILabel!
-    
     @IBOutlet weak var views: UILabel!
-    var talk: DetailModel?
-    
     @IBOutlet weak var publishedDate: UILabel!
     @IBOutlet weak var name: UILabel!
-    
     @IBOutlet weak var descriptiond: UILabel!
     @IBOutlet weak var tags: UILabel!
     @IBOutlet weak var webView: WKWebView!
+    
+    // MARK: - Properties
+    var talk: DetailModel?
     
     // MARK: - View Life Cycle
     override func viewDidLoad() {
