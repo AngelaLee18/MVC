@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Welcome-->
+        <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Ted_Talk" customModuleProvider="target" sceneMemberID="viewController">
@@ -20,8 +20,16 @@
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="IbG-Iu-Wnl">
                                 <rect key="frame" x="197" y="465" width="20" height="20"/>
                             </activityIndicatorView>
+                            <searchBar contentMode="redraw" id="v5c-FL-etj">
+                                <rect key="frame" x="0.0" y="35" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="S15-ZW-xpm"/>
+                                </connections>
+                            </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="tCg-Or-XUd" userLabel="PlayList">
-                                <rect key="frame" x="0.0" y="475" width="414" height="387"/>
+                                <rect key="frame" x="0.0" y="215" width="414" height="647"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="tedTalksCell" rowHeight="156" id="2ml-rq-85G" customClass="PlayListCell" customModule="Ted_Talk" customModuleProvider="target">
@@ -40,7 +48,7 @@
                                                                 <constraint firstAttribute="width" secondItem="jHj-wB-eku" secondAttribute="height" multiplier="4:3" id="Pkr-5c-vSy"/>
                                                             </constraints>
                                                         </imageView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rJw-Mm-yss">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rJw-Mm-yss">
                                                             <rect key="frame" x="185.5" y="15" width="213.5" height="27.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                                             <nil key="textColor"/>
@@ -87,54 +95,28 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="faV-MD-1H7"/>
                                 </connections>
                             </tableView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="nzs-pf-zqj" userLabel="SearchBar">
-                                <rect key="frame" x="0.0" y="88" width="414" height="387"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <searchBar key="tableHeaderView" contentMode="redraw" id="v5c-FL-etj">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                    <textInputTraits key="textInputTraits"/>
-                                    <connections>
-                                        <outlet property="delegate" destination="BYZ-38-t0r" id="S15-ZW-xpm"/>
-                                    </connections>
-                                </searchBar>
-                                <pickerView key="tableFooterView" contentMode="scaleToFill" id="sH5-Bx-5UA">
-                                    <rect key="frame" x="0.0" y="295.5" width="414" height="136"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                    <color key="backgroundColor" systemColor="systemGray2Color"/>
-                                    <connections>
-                                        <outlet property="dataSource" destination="BYZ-38-t0r" id="LLV-fK-STf"/>
-                                        <outlet property="delegate" destination="BYZ-38-t0r" id="WMv-MY-MFL"/>
-                                    </connections>
-                                </pickerView>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="90" id="j69-0d-PTO">
-                                        <rect key="frame" x="0.0" y="88.5" width="414" height="90"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="j69-0d-PTO" id="fKm-NG-IH3">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="90"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
+                            <pickerView contentMode="scaleToFill" id="sH5-Bx-5UA">
+                                <rect key="frame" x="0.0" y="79" width="414" height="136"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemGray2Color"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="LLV-fK-STf"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="WMv-MY-MFL"/>
+                                </connections>
+                            </pickerView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="nzs-pf-zqj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="65D-6K-Ib2"/>
                             <constraint firstItem="tCg-Or-XUd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="EbO-lA-hPV"/>
-                            <constraint firstItem="nzs-pf-zqj" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="FpP-Cl-PHF"/>
-                            <constraint firstItem="nzs-pf-zqj" firstAttribute="height" secondItem="6Tk-OE-BBY" secondAttribute="height" multiplier="0.5" id="Hy1-LG-sBm"/>
                             <constraint firstItem="IbG-Iu-Wnl" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="Koj-Jo-Tov"/>
-                            <constraint firstItem="tCg-Or-XUd" firstAttribute="height" secondItem="6Tk-OE-BBY" secondAttribute="height" multiplier="0.5" id="XBT-Dg-jMO"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="tCg-Or-XUd" secondAttribute="bottom" id="czp-5K-nIT"/>
                             <constraint firstItem="IbG-Iu-Wnl" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="kjO-5n-wtm"/>
+                            <constraint firstItem="tCg-Or-XUd" firstAttribute="top" secondItem="sH5-Bx-5UA" secondAttribute="bottom" id="tFy-cA-yPY"/>
                             <constraint firstItem="tCg-Or-XUd" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" id="u2O-0b-9H9"/>
-                            <constraint firstItem="nzs-pf-zqj" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" id="zT6-FS-4Yg"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Welcome" id="iQF-f7-g05">
+                    <navigationItem key="navigationItem" id="iQF-f7-g05">
                         <barButtonItem key="backBarButtonItem" title="Back" id="OGJ-da-fRK"/>
                     </navigationItem>
                     <connections>
