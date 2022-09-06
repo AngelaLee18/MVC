@@ -9,10 +9,12 @@ import Foundation
 
 public class Parse {
     enum ParseError: Error {
-        case fileNotFound
+        case NotFound
         case parseError
         case serverError
         case clientError
+        case badURL
+        case error
     }
     
     func parseTedTalk(_ tedTalks: String, _ completion: @escaping (Result<[TedTalkData], ParseError>) -> Void ) {
@@ -21,10 +23,18 @@ public class Parse {
         let url = URL(string: urlAsString)
         
         guard let url = url else {
-            return
+            return completion(.failure(.badURL))
         }
-        session.dataTask(with: url) { data, response, error in guard let data = data else {
-            completion(.failure(.fileNotFound))
+        session.dataTask(with: url) { data, response, error in
+            if error != nil {
+                return completion(.failure(.error))
+            }
+            guard let response = response as? HTTPURLResponse,(200...299).contains(response.statusCode) else {
+                completion(.failure(.serverError))
+                return
+            }
+            guard let data = data else {
+            completion(.failure(.NotFound))
             return
             }
             do {
@@ -33,11 +43,6 @@ public class Parse {
                 completion(.success(dataFromJson))
             }catch {
                 completion(.failure(.parseError))
-            }
-                    
-            guard let response = response as? HTTPURLResponse,(200...299).contains(response.statusCode) else{
-                completion(.failure(.serverError))
-                return
             }
         }.resume()
     }
