@@ -40,6 +40,4 @@ class ServiceProvider: ServiceProtocol {
             }
         }.resume()
     }
-    
-    
 }

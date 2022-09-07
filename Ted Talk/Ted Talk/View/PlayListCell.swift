@@ -16,5 +16,4 @@ class PlayListCell: UITableViewCell {
         title.text = recived.title
         descrip.text = recived.description
     }
-    
 }
