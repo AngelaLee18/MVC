@@ -7,15 +7,30 @@
 
 import Foundation
 
-public class Parse {
-    enum ParseError: Error {
-        case NotFound
-        case parseError
-        case serverError
-        case clientError
-        case badURL
-        case error
+public class Parse: ServiceProtocol {
+    
+    var fileName: String
+    
+    init(fileName: String = "tedTalks") {
+        self.fileName = fileName
     }
+
+    func parseTedTalk(_ completion: @escaping (Result<[TedTalkData], ServiceError>) -> Void ) {
+        DispatchQueue.global(qos: .background).async {
+            guard let fileLocation = Bundle.main.url(forResource: self.fileName, withExtension: "json") else {
+                return completion(.failure(.fileNotFound))
+            }
+            do {
+                let jsonData = try Data(contentsOf: fileLocation)
+                let jsonDecoder = JSONDecoder()
+                let dataFromJson = try jsonDecoder.decode([TedTalkData].self, from:jsonData)
+                    completion(.success(dataFromJson))
+            } catch {
+                completion(.failure(.parseError))
+            }
+        }
+    }
+    /*
     
     func parseTedTalk(_ tedTalks: String, _ completion: @escaping (Result<[TedTalkData], ParseError>) -> Void ) {
         let session = URLSession.shared
@@ -45,6 +60,6 @@ public class Parse {
                 completion(.failure(.parseError))
             }
         }.resume()
-    }
+    }*/
 }
 

@@ -23,10 +23,11 @@ class ParseTest: XCTestCase {
     }
     
     func testParse() {
-        let test = "test"
+        
         let expectation = expectation(description: "Parsing")
         var testTedTalk: [TedTalkData] = []
-        sut.parseTedTalk(test) { result in
+        sut.fileName = "test"
+        sut.parseTedTalk() { result in
             switch result {
             case .success(let result):
                 testTedTalk = result

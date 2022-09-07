@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		10047B6128C91DD4003935C9 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10047B6028C91DD4003935C9 /* Protocols.swift */; };
+		10047B6328C91EEC003935C9 /* ServieProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10047B6228C91EEC003935C9 /* ServieProvider.swift */; };
 		1005202928B920A200A18ABD /* ParseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1065AEF328B7F779004176D2 /* ParseTest.swift */; };
 		1005202A28B940A100A18ABD /* test.json in Resources */ = {isa = PBXBuildFile; fileRef = 1065AEF928B7F9A6004176D2 /* test.json */; };
 		1005202C28B9465E00A18ABD /* PlayListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1005202B28B9465E00A18ABD /* PlayListCell.swift */; };
@@ -53,6 +55,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		10047B6028C91DD4003935C9 /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
+		10047B6228C91EEC003935C9 /* ServieProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServieProvider.swift; sourceTree = "<group>"; };
 		1005202B28B9465E00A18ABD /* PlayListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayListCell.swift; sourceTree = "<group>"; };
 		10274DED28C2515D009DDEBF /* DetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailModel.swift; sourceTree = "<group>"; };
 		10274DEF28C25CFC009DDEBF /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
@@ -140,6 +144,8 @@
 				1075212F28B555CE009B90F2 /* TedTalkData.swift */,
 				1075213128B556E5009B90F2 /* Parse.swift */,
 				1065AEF128B7F288004176D2 /* DataManager.swift */,
+				10047B6228C91EEC003935C9 /* ServieProvider.swift */,
+				10047B6028C91DD4003935C9 /* Protocols.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -381,6 +387,8 @@
 				B3F949C0266A727C00D626BB /* ViewController.swift in Sources */,
 				1075213228B556E5009B90F2 /* Parse.swift in Sources */,
 				10274DF028C25CFC009DDEBF /* DetailViewController.swift in Sources */,
+				10047B6128C91DD4003935C9 /* Protocols.swift in Sources */,
+				10047B6328C91EEC003935C9 /* ServieProvider.swift in Sources */,
 				1005202C28B9465E00A18ABD /* PlayListCell.swift in Sources */,
 				B3F949BC266A727C00D626BB /* AppDelegate.swift in Sources */,
 				1065AEF228B7F288004176D2 /* DataManager.swift in Sources */,
