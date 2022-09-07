@@ -15,6 +15,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var pickerView: UIPickerView!
 
+    //MARK: - Properties
     var tableViewData: [TedTalkData] = [] {
         didSet {
             tableView.reloadData()

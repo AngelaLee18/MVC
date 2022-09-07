@@ -29,8 +29,8 @@ class DetailViewController: UIViewController, WKUIDelegate {
         // Do any additional setup after loading the view.
         ShowDetail()
         
-        let myURL = URL(string: talk?.url ?? "")
-        let myRequest = URLRequest(url: myURL!)
+        guard let myURL = URL(string: talk?.url ?? "") else { return }
+        let myRequest = URLRequest(url: myURL)
         webView.load(myRequest)
     }
     
