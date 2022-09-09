@@ -30,11 +30,11 @@ class SearchBarAndPickerViewTest: XCTestCase {
         //
         var searchResult: [TedTalkData] = []
 
-        searchResult = sut.searchEnteredWord(searchText: "event", picker: "Event")
+        searchResult = sut.searchByFilter(searchText: "event", picker: "Event")
         XCTAssertEqual(searchResult.count, 3, "3 event matched with TED2006")
-        searchResult = sut.searchEnteredWord(searchText: "speaker1", picker: "Event")
+        searchResult = sut.searchByFilter(searchText: "speaker1", picker: "Event")
         XCTAssertEqual(searchResult.count, 0, "There is not event called speacker1")
-        searchResult = sut.searchEnteredWord(searchText: "nam", picker: "Name")
+        searchResult = sut.searchByFilter(searchText: "nam", picker: "Name")
         XCTAssertEqual(searchResult.count, 3, "There is 3 matched when search nam in Name")
         XCTAssertEqual(searchResult[0].name, "name1", "The name of the main speaker of the first event is name1")
     }

@@ -33,22 +33,22 @@ public class DataManager {
     
     //MARK: - Filter
     
-    func searchEnteredWord(searchText: String, picker: String) -> [TedTalkData] {
+    func searchByFilter(searchText: String, picker: Int) -> [TedTalkData] {
         var filterData: [TedTalkData] = []
         guard searchText != "" else {
             return tedTalks
         }
         filterData = tedTalks.filter { talk in
             switch picker {
-            case "Event":
+            case 1:
                 return talk.event.lowercased().contains(searchText.lowercased())
-            case "Main speaker":
+            case 2:
                 return talk.main_speaker.lowercased().contains(searchText.lowercased())
-            case "Title":
+            case 3:
                 return talk.title.lowercased().contains(searchText.lowercased())
-            case "Name":
+            case 4:
                 return talk.name.lowercased().contains(searchText.lowercased())
-            case "Description":
+            case 5:
                 return talk.description.lowercased().contains(searchText.lowercased())
                 
             default:
