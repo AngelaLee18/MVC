@@ -17,7 +17,6 @@ public class DataManager {
     }
     
     //MARK: - Get data of TedTalks
-    
     func getDataTedTalks(completionHandler: @escaping ([TedTalkData]) -> Void) {
         service.parseTedTalk() { [weak self] result in DispatchQueue.main.async {
                 switch result {
@@ -32,7 +31,6 @@ public class DataManager {
     }
     
     //MARK: - Filter
-    
     func searchByFilter(searchText: String, picker: Int) -> [TedTalkData] {
         var filterData: [TedTalkData] = []
         guard searchText != "" else {

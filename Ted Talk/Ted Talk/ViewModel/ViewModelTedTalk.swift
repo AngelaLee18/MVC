@@ -46,7 +46,7 @@ class ViewModelTedTalk {
     }
     
     //MARK: - SearchBar and PickerView funtions
-    func getCantOfPickerOption() -> Int {
+    func getPickerOptionCount() -> Int {
         return pickerOptions.count
     }
     

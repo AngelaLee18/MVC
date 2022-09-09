@@ -25,8 +25,7 @@ class DetailViewController: UIViewController, WKUIDelegate {
     // MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
         ShowDetail()
         
         guard let myURL = URL(string: talk?.url ?? "") else { return }

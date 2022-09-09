@@ -77,7 +77,7 @@ extension TableViewController: UISearchBarDelegate, UIPickerViewDataSource, UIPi
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return viewModel.getCantOfPickerOption() //Cambiar nombre
+        return viewModel.getPickerOptionCount()
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
