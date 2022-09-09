@@ -88,6 +88,5 @@ extension ViewController: UISearchBarDelegate, UIPickerViewDataSource, UIPickerV
     
     func filter() {
         viewModel.filterTedTalks(searBarText: searchBar.text ?? "", selectPicker: pickerView.selectedRow(inComponent: 0))
-        
     }
 }
