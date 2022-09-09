@@ -149,13 +149,6 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		1075212D28B5491F009B90F2 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
 		1075212E28B54926009B90F2 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -195,7 +188,6 @@
 				1075212E28B54926009B90F2 /* Model */,
 				10047B6528C92D90003935C9 /* ViewModel */,
 				1075212C28B54918009B90F2 /* View */,
-				1075212D28B5491F009B90F2 /* Controller */,
 				B3F949EB266A729400D626BB /* Assets */,
 				B3F949BB266A727C00D626BB /* AppDelegate.swift */,
 				B3F949BD266A727C00D626BB /* SceneDelegate.swift */,
