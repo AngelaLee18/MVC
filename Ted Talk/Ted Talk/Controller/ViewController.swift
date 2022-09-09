@@ -15,6 +15,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var pickerView: UIPickerView!
 
+    //MARK: - Properties
     var tableViewData: [TedTalkData] = [] {
         didSet {
             tableView.reloadData()
@@ -29,11 +30,13 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         activityIndicator.hidesWhenStopped = true
+        tableView.isHidden = true
         activityIndicator.startAnimating()
         manager.getDataTedTalks { tedTalksData in
             self.tableViewData = tedTalksData
             DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
                 self.activityIndicator.stopAnimating()
+                self.tableView.isHidden = false
             }
         }
     }
