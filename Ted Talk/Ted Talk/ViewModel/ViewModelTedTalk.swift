@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import UIKit
 
 class ViewModelTedTalk {
     
@@ -24,7 +23,7 @@ class ViewModelTedTalk {
     var refreshTableView: (() -> ())?
     
     
-    // MARK: - Fetching funtions
+    // MARK: - Fetching funtion
     
     func fetchData() {
         manager.getDataTedTalks() { tedTalks in
@@ -33,25 +32,20 @@ class ViewModelTedTalk {
         }
     }
     
+    //MARK: - TableViewController funtions
     func getNumberOfRow() -> Int {
         return tedTalks.count
     }
     
-    func getTedTalk(indexPath: IndexPath, tableView: UITableView) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "tedTalksCell", for: indexPath) as?  PlayListCell else {
-            return UITableViewCell()
-        }
-        cell.ShowPlaylistInformation(.init(talk: tedTalks[indexPath.row]))
-        return cell
+    func getTedTalk(indexPath: IndexPath) -> TedTalksCellModel {
+        return .init(talk: tedTalks[indexPath.row])
     }
     
-    func getTedTalkDetails(tableView: UITableView, segue: UIStoryboardSegue ) {
-        guard let selectedPath = tableView.indexPathForSelectedRow else { return }
-        if segue.identifier == "showDetail", let destination = segue.destination as? DetailViewController {
-            destination.talk = .init(talk: tedTalks[selectedPath.row])
-        }
+    func getTedTalkDetails(selectedPath: IndexPath) -> DetailCellModel {
+        return .init(talk: tedTalks[selectedPath.row])
     }
     
+    //MARK: - SearchBar and PickerView funtions
     func getCantOfPickerOption() -> Int {
         return pickerOptions.count
     }
@@ -60,7 +54,7 @@ class ViewModelTedTalk {
         return pickerOptions[row]
     }
     
-    func filterTedTalks(searBarText: String, selectPicker: Int)  {
+    func filteredTedTalks(searBarText: String, selectPicker: Int)  {
          tedTalks = manager.searchByFilter(searchText: searBarText, picker: selectPicker)
     }
 }

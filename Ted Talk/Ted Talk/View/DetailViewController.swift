@@ -20,7 +20,7 @@ class DetailViewController: UIViewController, WKUIDelegate {
     @IBOutlet weak var webView: WKWebView!
     
     // MARK: - Properties
-    var talk: DetailModel?
+    var talk: DetailCellModel?
     
     // MARK: - View Life Cycle
     override func viewDidLoad() {

@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct DetailModel {
+struct DetailCellModel {
     let title: String
     let url: String
     let view: Int

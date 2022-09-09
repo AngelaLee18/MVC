@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class TableViewController: UIViewController {
     
     // MARK: - IBOutles
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
@@ -17,20 +17,19 @@ class ViewController: UIViewController {
     
     //MARK: - Properties
     lazy var viewModel = ViewModelTedTalk()
-    //var manager: DataManager = DataManager()
     
     //MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         configurateView()
         bind()
+        viewModel.fetchData()
     }
     
     func configurateView() {
         activityIndicator.hidesWhenStopped = true
         tableView.isHidden = true
         activityIndicator.startAnimating()
-        viewModel.fetchData()
     }
     
     func bind() {
@@ -47,30 +46,38 @@ class ViewController: UIViewController {
 }
 
 // MARK: - UITableView Methods
-extension ViewController: UITableViewDelegate, UITableViewDataSource {
+extension TableViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.getNumberOfRow() //Agregar getNumberOfRow
+        return viewModel.getNumberOfRow()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        viewModel.getTedTalk(indexPath: indexPath, tableView: tableView)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "tedTalksCell", for: indexPath) as?  PlayListCell else {
+            return UITableViewCell()
+        }
+        let talk = viewModel.getTedTalk(indexPath: indexPath)
+        cell.ShowPlaylistInformation(talk)
+        return cell
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        viewModel.getTedTalkDetails(tableView: tableView, segue: segue)
+        guard let selectedPath = tableView.indexPathForSelectedRow else { return }
+        if segue.identifier == "showDetail", let destination = segue.destination as? DetailViewController {
+            destination.talk = viewModel.getTedTalkDetails(selectedPath: selectedPath)
+        }
     }
 }
 
 // MARK: - UISearchBar and UIPickerView Methods
-extension ViewController: UISearchBarDelegate, UIPickerViewDataSource, UIPickerViewDelegate {
+extension TableViewController: UISearchBarDelegate, UIPickerViewDataSource, UIPickerViewDelegate {
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return viewModel.getCantOfPickerOption()
+        return viewModel.getCantOfPickerOption() //Cambiar nombre
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
@@ -87,6 +94,6 @@ extension ViewController: UISearchBarDelegate, UIPickerViewDataSource, UIPickerV
     }
     
     func filter() {
-        viewModel.filterTedTalks(searBarText: searchBar.text ?? "", selectPicker: pickerView.selectedRow(inComponent: 0))
+        viewModel.filteredTedTalks(searBarText: searchBar.text ?? "", selectPicker: pickerView.selectedRow(inComponent: 0))
     }
 }
