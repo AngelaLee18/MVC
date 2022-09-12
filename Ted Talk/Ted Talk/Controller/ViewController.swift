@@ -9,11 +9,13 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    // MARK: - IBOutles
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var pickerView: UIPickerView!
 
+    //MARK: - Properties
     var tableViewData: [TedTalkData] = [] {
         didSet {
             tableView.reloadData()
@@ -25,7 +27,6 @@ class ViewController: UIViewController {
     ]
     
     //MARK: - View Life Cycle
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         activityIndicator.hidesWhenStopped = true
@@ -42,7 +43,6 @@ class ViewController: UIViewController {
 }
 
 // MARK: - UITableView Methods
-
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -56,10 +56,18 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         cell.ShowPlaylistInformation(.init(talk: tableViewData[indexPath.row]))
         return cell
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let selectedPath = tableView.indexPathForSelectedRow else {
+            return
+        }
+        if segue.identifier == "showDetail", let destination = segue.destination as? DetailViewController {
+            destination.talk = .init(talk: tableViewData[selectedPath.row])
+        }
+    }
 }
 
 // MARK: - UISearchBar and UIPickerView Methods
-
 extension ViewController: UISearchBarDelegate, UIPickerViewDataSource, UIPickerViewDelegate {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
