@@ -9,13 +9,17 @@ import Foundation
 
 public class DataManager {
     
-    var fileName: String
     var tedTalks: [TedTalkData] = []
+    var service: ServiceProtocol
+    
+    init(service: ServiceProtocol = ServiceProvider()) {
+        self.service = service
+    }
     
     //MARK: - Get data of TedTalks
     
     func getDataTedTalks(completionHandler: @escaping ([TedTalkData]) -> Void) {
-        Parse().parseTedTalk(fileName) { [weak self] result in DispatchQueue.main.async {
+        service.parseTedTalk() { [weak self] result in DispatchQueue.main.async {
                 switch result {
                 case.success(let data):
                     self?.tedTalks = data
@@ -25,9 +29,6 @@ public class DataManager {
                 }
             }
         }
-    }
-    init(fileName: String = "tedTalks") {
-        self.fileName = fileName
     }
     
     //MARK: - Filter
