@@ -94,6 +94,7 @@ extension TableViewController: UISearchBarDelegate, UIPickerViewDataSource, UIPi
     }
     
     func filter() {
-        viewModel.filteredTedTalks(searBarText: searchBar.text ?? "", selectPicker: pickerView.selectedRow(inComponent: 0))
+        viewModel.searchByFilter(searchText: searchBar.text ?? "", picker: pickerView.selectedRow(inComponent: 0))
+        
     }
 }

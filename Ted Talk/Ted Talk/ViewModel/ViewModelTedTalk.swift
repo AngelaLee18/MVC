@@ -10,13 +10,23 @@ import Foundation
 class ViewModelTedTalk {
     
     //MARK: - Properties
-    private let pickerOptions = ["All", "Event", "Main speaker", "Title", "Name", "Description"]
+    enum PickerOptions: String, CaseIterable {
+        case event = "Event"
+        case main_speaker = "Main Speaker"
+        case title = "Title"
+        case name = "Name"
+        case description = "Description"
+        case all = "All"
+    }
+    private let pickerOptions: [PickerOptions] = [.all, .event, .main_speaker, .title, .name, .description]
     private var manager: DataManager = DataManager()
-    private var tedTalks: [TedTalkData] = [] {
+    private var filterTedTalks: [TedTalkData] = [] {
         didSet {
             refreshTableView?()
         }
     }
+    private var tedTalks: [TedTalkData] = []
+    
     
     //MARK: - Closures
     var loadTableView: (() -> ())?
@@ -28,21 +38,22 @@ class ViewModelTedTalk {
     func fetchData() {
         manager.getDataTedTalks() { tedTalks in
             self.loadTableView?()
+            self.filterTedTalks = tedTalks
             self.tedTalks = tedTalks
         }
     }
     
     //MARK: - TableViewController funtions
     func getNumberOfRow() -> Int {
-        return tedTalks.count
+        return filterTedTalks.count
     }
     
     func getTedTalk(indexPath: IndexPath) -> TedTalksCellModel {
-        return .init(talk: tedTalks[indexPath.row])
+        return .init(talk: filterTedTalks[indexPath.row])
     }
     
     func getTedTalkDetails(selectedPath: IndexPath) -> DetailCellModel {
-        return .init(talk: tedTalks[selectedPath.row])
+        return .init(talk: filterTedTalks[selectedPath.row])
     }
     
     //MARK: - SearchBar and PickerView funtions
@@ -51,10 +62,29 @@ class ViewModelTedTalk {
     }
     
     func getPickerOption(row: Int) -> String {
-        return pickerOptions[row]
+        return pickerOptions[row].rawValue
     }
     
-    func filteredTedTalks(searBarText: String, selectPicker: Int)  {
-         tedTalks = manager.searchByFilter(searchText: searBarText, picker: selectPicker)
+    func searchByFilter(searchText: String, picker: Int) {
+        guard searchText != "" else {
+            return
+        }
+        filterTedTalks = tedTalks.filter { talk in
+            switch pickerOptions[picker] {
+            case .event:
+                return talk.event.lowercased().contains(searchText.lowercased())
+            case .main_speaker:
+                return talk.main_speaker.lowercased().contains(searchText.lowercased())
+            case .title:
+                return talk.title.lowercased().contains(searchText.lowercased())
+            case .name:
+                return talk.name.lowercased().contains(searchText.lowercased())
+            case .description:
+                return talk.description.lowercased().contains(searchText.lowercased())
+                
+            case .all:
+                return talk.event.lowercased().contains(searchText.lowercased()) || talk.main_speaker.lowercased().contains(searchText.lowercased()) || talk.title.lowercased().contains(searchText.lowercased()) || talk.name.lowercased().contains(searchText.lowercased()) || talk.description.lowercased().contains(searchText.lowercased())
+            }
+        }
     }
 }
