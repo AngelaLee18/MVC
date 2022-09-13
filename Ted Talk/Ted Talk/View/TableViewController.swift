@@ -6,11 +6,12 @@
 //
 
 import UIKit
+import Lottie
 
 class TableViewController: UIViewController {
     
     // MARK: - IBOutles
-    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var animationView: AnimationView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var pickerView: UIPickerView!
@@ -27,15 +28,17 @@ class TableViewController: UIViewController {
     }
     
     func configurateView() {
-        activityIndicator.hidesWhenStopped = true
         tableView.isHidden = true
-        activityIndicator.startAnimating()
+        animationView.contentMode = .scaleAspectFit
+        animationView.loopMode = .loop
+        animationView.play()
     }
     
     func bind() {
         viewModel.loadTableView = {
-            DispatchQueue.main.async {
-                self.activityIndicator.stopAnimating()
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+                self.animationView.stop()
+                self.animationView.isHidden = true
                 self.tableView.isHidden = false
             }
         }

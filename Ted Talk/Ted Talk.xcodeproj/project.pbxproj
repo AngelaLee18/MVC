@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -20,6 +20,9 @@
 		1075213228B556E5009B90F2 /* Parse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1075213128B556E5009B90F2 /* Parse.swift */; };
 		10998ACE28BFFDE7008839A6 /* SearchBarAndPickerViewTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10998ACD28BFFDE7008839A6 /* SearchBarAndPickerViewTest.swift */; };
 		10E0FD7628BCFF6D0063E24E /* TedTalksCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E0FD7528BCFF6D0063E24E /* TedTalksCellModel.swift */; };
+		10F7B23D28D0C70100C759DC /* loader.json in Resources */ = {isa = PBXBuildFile; fileRef = 10F7B23B28D0BD3800C759DC /* loader.json */; };
+		5A8C74417371761C5657678F /* Pods_Ted_Talk_Ted_TalkUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9C7D98C0C6210E17C23C0D7 /* Pods_Ted_Talk_Ted_TalkUITests.framework */; };
+		858528B1279E3D9705AB60E9 /* Pods_Ted_TalkTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 062D63364D0CAEBC65CEBEE7 /* Pods_Ted_TalkTests.framework */; };
 		B3F949BC266A727C00D626BB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F949BB266A727C00D626BB /* AppDelegate.swift */; };
 		B3F949BE266A727C00D626BB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F949BD266A727C00D626BB /* SceneDelegate.swift */; };
 		B3F949C0266A727C00D626BB /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F949BF266A727C00D626BB /* TableViewController.swift */; };
@@ -29,6 +32,7 @@
 		B3F949D3266A728000D626BB /* Ted_TalkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F949D2266A728000D626BB /* Ted_TalkTests.swift */; };
 		B3F949DE266A728000D626BB /* Ted_TalkUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F949DD266A728000D626BB /* Ted_TalkUITests.swift */; };
 		B3F949ED266A729400D626BB /* tedTalks.json in Resources */ = {isa = PBXBuildFile; fileRef = B3F949EC266A729400D626BB /* tedTalks.json */; };
+		D082F84B76A01DCFFD0E8F10 /* Pods_Ted_Talk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 924EB8D8A339C94B8C1971E5 /* Pods_Ted_Talk.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +60,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		062D63364D0CAEBC65CEBEE7 /* Pods_Ted_TalkTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Ted_TalkTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		10047B6028C91DD4003935C9 /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 		10047B6228C91EEC003935C9 /* ServieProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServieProvider.swift; sourceTree = "<group>"; };
 		1005202B28B9465E00A18ABD /* PlayListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayListCell.swift; sourceTree = "<group>"; };
@@ -70,6 +75,13 @@
 		1075213128B556E5009B90F2 /* Parse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parse.swift; sourceTree = "<group>"; };
 		10998ACD28BFFDE7008839A6 /* SearchBarAndPickerViewTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarAndPickerViewTest.swift; sourceTree = "<group>"; };
 		10E0FD7528BCFF6D0063E24E /* TedTalksCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TedTalksCellModel.swift; sourceTree = "<group>"; };
+		10F7B23B28D0BD3800C759DC /* loader.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loader.json; sourceTree = "<group>"; };
+		2936030D04B0B69E97A878A3 /* Pods-Ted Talk.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ted Talk.debug.xcconfig"; path = "Target Support Files/Pods-Ted Talk/Pods-Ted Talk.debug.xcconfig"; sourceTree = "<group>"; };
+		29BD3040F1A2FCC562AF1AAE /* Pods-Ted Talk-Ted TalkUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ted Talk-Ted TalkUITests.release.xcconfig"; path = "Target Support Files/Pods-Ted Talk-Ted TalkUITests/Pods-Ted Talk-Ted TalkUITests.release.xcconfig"; sourceTree = "<group>"; };
+		3B1599F9E354A8F6FAD216EC /* Pods-Ted Talk.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ted Talk.release.xcconfig"; path = "Target Support Files/Pods-Ted Talk/Pods-Ted Talk.release.xcconfig"; sourceTree = "<group>"; };
+		768FEAFF874FB5AA5BD9A987 /* Pods-Ted TalkTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ted TalkTests.release.xcconfig"; path = "Target Support Files/Pods-Ted TalkTests/Pods-Ted TalkTests.release.xcconfig"; sourceTree = "<group>"; };
+		924EB8D8A339C94B8C1971E5 /* Pods_Ted_Talk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Ted_Talk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A9C7D98C0C6210E17C23C0D7 /* Pods_Ted_Talk_Ted_TalkUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Ted_Talk_Ted_TalkUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3F949B8266A727C00D626BB /* Ted Talk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Ted Talk.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3F949BB266A727C00D626BB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B3F949BD266A727C00D626BB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -85,6 +97,8 @@
 		B3F949DD266A728000D626BB /* Ted_TalkUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ted_TalkUITests.swift; sourceTree = "<group>"; };
 		B3F949DF266A728000D626BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B3F949EC266A729400D626BB /* tedTalks.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tedTalks.json; sourceTree = "<group>"; };
+		B5A016595EC53D60144D339F /* Pods-Ted TalkTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ted TalkTests.debug.xcconfig"; path = "Target Support Files/Pods-Ted TalkTests/Pods-Ted TalkTests.debug.xcconfig"; sourceTree = "<group>"; };
+		B8C011CBC581DCCAED2549B4 /* Pods-Ted Talk-Ted TalkUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ted Talk-Ted TalkUITests.debug.xcconfig"; path = "Target Support Files/Pods-Ted Talk-Ted TalkUITests/Pods-Ted Talk-Ted TalkUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +113,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D082F84B76A01DCFFD0E8F10 /* Pods_Ted_Talk.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -106,6 +121,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				858528B1279E3D9705AB60E9 /* Pods_Ted_TalkTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -113,6 +129,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A8C74417371761C5657678F /* Pods_Ted_Talk_Ted_TalkUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -160,6 +177,19 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		74BF83A92CEF4DD68B2788AE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2936030D04B0B69E97A878A3 /* Pods-Ted Talk.debug.xcconfig */,
+				3B1599F9E354A8F6FAD216EC /* Pods-Ted Talk.release.xcconfig */,
+				B8C011CBC581DCCAED2549B4 /* Pods-Ted Talk-Ted TalkUITests.debug.xcconfig */,
+				29BD3040F1A2FCC562AF1AAE /* Pods-Ted Talk-Ted TalkUITests.release.xcconfig */,
+				B5A016595EC53D60144D339F /* Pods-Ted TalkTests.debug.xcconfig */,
+				768FEAFF874FB5AA5BD9A987 /* Pods-Ted TalkTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		B3F949AF266A727C00D626BB = {
 			isa = PBXGroup;
 			children = (
@@ -167,6 +197,8 @@
 				B3F949D1266A728000D626BB /* Ted TalkTests */,
 				B3F949DC266A728000D626BB /* Ted TalkUITests */,
 				B3F949B9266A727C00D626BB /* Products */,
+				74BF83A92CEF4DD68B2788AE /* Pods */,
+				E5C7F075BF2CAF79F0F442B6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -222,8 +254,19 @@
 			children = (
 				B3F949EC266A729400D626BB /* tedTalks.json */,
 				1065AEF928B7F9A6004176D2 /* test.json */,
+				10F7B23B28D0BD3800C759DC /* loader.json */,
 			);
 			path = Assets;
+			sourceTree = "<group>";
+		};
+		E5C7F075BF2CAF79F0F442B6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				924EB8D8A339C94B8C1971E5 /* Pods_Ted_Talk.framework */,
+				A9C7D98C0C6210E17C23C0D7 /* Pods_Ted_Talk_Ted_TalkUITests.framework */,
+				062D63364D0CAEBC65CEBEE7 /* Pods_Ted_TalkTests.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -251,9 +294,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B3F949E2266A728000D626BB /* Build configuration list for PBXNativeTarget "Ted Talk" */;
 			buildPhases = (
+				F0321257180F3DCCC0E48A2D /* [CP] Check Pods Manifest.lock */,
 				B3F949B4266A727C00D626BB /* Sources */,
 				B3F949B5266A727C00D626BB /* Frameworks */,
 				B3F949B6266A727C00D626BB /* Resources */,
+				77E27F56418098DF2C47297C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -268,6 +313,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B3F949E5266A728000D626BB /* Build configuration list for PBXNativeTarget "Ted TalkTests" */;
 			buildPhases = (
+				C4EAE18137BA9009AABD9BC3 /* [CP] Check Pods Manifest.lock */,
 				B3F949CA266A728000D626BB /* Sources */,
 				B3F949CB266A728000D626BB /* Frameworks */,
 				B3F949CC266A728000D626BB /* Resources */,
@@ -286,9 +332,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B3F949E8266A728000D626BB /* Build configuration list for PBXNativeTarget "Ted TalkUITests" */;
 			buildPhases = (
+				4382362D3569B75F62A15123 /* [CP] Check Pods Manifest.lock */,
 				B3F949D5266A728000D626BB /* Sources */,
 				B3F949D6266A728000D626BB /* Frameworks */,
 				B3F949D7266A728000D626BB /* Resources */,
+				C3287A27301C6DAB9B517EFA /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -360,6 +408,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B3F949C8266A728000D626BB /* LaunchScreen.storyboard in Resources */,
+				10F7B23D28D0C70100C759DC /* loader.json in Resources */,
 				B3F949ED266A729400D626BB /* tedTalks.json in Resources */,
 				B3F949C5266A728000D626BB /* Assets.xcassets in Resources */,
 				B3F949C3266A727C00D626BB /* Main.storyboard in Resources */,
@@ -382,6 +431,109 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4382362D3569B75F62A15123 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Ted Talk-Ted TalkUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		77E27F56418098DF2C47297C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Ted Talk/Pods-Ted Talk-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Ted Talk/Pods-Ted Talk-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Ted Talk/Pods-Ted Talk-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C3287A27301C6DAB9B517EFA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Ted Talk-Ted TalkUITests/Pods-Ted Talk-Ted TalkUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Ted Talk-Ted TalkUITests/Pods-Ted Talk-Ted TalkUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Ted Talk-Ted TalkUITests/Pods-Ted Talk-Ted TalkUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C4EAE18137BA9009AABD9BC3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Ted TalkTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F0321257180F3DCCC0E48A2D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Ted Talk-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1065AEE028B7C938004176D2 /* Sources */ = {
@@ -625,6 +777,7 @@
 		};
 		B3F949E3266A728000D626BB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2936030D04B0B69E97A878A3 /* Pods-Ted Talk.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -643,6 +796,7 @@
 		};
 		B3F949E4266A728000D626BB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3B1599F9E354A8F6FAD216EC /* Pods-Ted Talk.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -661,6 +815,7 @@
 		};
 		B3F949E6266A728000D626BB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B5A016595EC53D60144D339F /* Pods-Ted TalkTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -682,6 +837,7 @@
 		};
 		B3F949E7266A728000D626BB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 768FEAFF874FB5AA5BD9A987 /* Pods-Ted TalkTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -703,6 +859,7 @@
 		};
 		B3F949E9266A728000D626BB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B8C011CBC581DCCAED2549B4 /* Pods-Ted Talk-Ted TalkUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -722,6 +879,7 @@
 		};
 		B3F949EA266A728000D626BB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 29BD3040F1A2FCC562AF1AAE /* Pods-Ted Talk-Ted TalkUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

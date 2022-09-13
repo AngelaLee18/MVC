@@ -1,0 +1,6 @@
+framework module Pods_Ted_Talk_Ted_TalkUITests {
+  umbrella header "Pods-Ted Talk-Ted TalkUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
