@@ -19,7 +19,7 @@ class ViewModelTedTalk {
         case all = "All"
     }
     private let pickerOptions: [PickerOptions] = [.all, .event, .main_speaker, .title, .name, .description]
-    private var manager: DataManager = DataManager()
+    private var manager: DataManager
     private var filterTedTalks: [TedTalkData] = [] {
         didSet {
             refreshTableView?()
@@ -27,7 +27,10 @@ class ViewModelTedTalk {
     }
     private var tedTalks: [TedTalkData] = []
     
-    
+    //MARK: - Init
+    init(dataManager: DataManager = DataManager()) {
+        manager = dataManager
+    }
     //MARK: - Closures
     var loadTableView: (() -> ())?
     var refreshTableView: (() -> ())?
@@ -48,12 +51,12 @@ class ViewModelTedTalk {
         return filterTedTalks.count
     }
     
-    func getTedTalk(indexPath: IndexPath) -> TedTalksCellModel {
-        return .init(talk: filterTedTalks[indexPath.row])
+    func getTedTalk(indexPath: Int) -> TedTalksCellModel {
+        return .init(talk: filterTedTalks[indexPath])
     }
     
-    func getTedTalkDetails(selectedPath: IndexPath) -> DetailCellModel {
-        return .init(talk: filterTedTalks[selectedPath.row])
+    func getTedTalkDetails(selectedPath: Int) -> DetailCellModel {
+        return .init(talk: filterTedTalks[selectedPath])
     }
     
     //MARK: - SearchBar and PickerView funtions

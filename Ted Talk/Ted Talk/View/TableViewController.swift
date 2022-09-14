@@ -36,14 +36,15 @@ class TableViewController: UIViewController {
     
     func bind() {
         viewModel.loadTableView = {
+
             DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
                 self.animationView.stop()
                 self.animationView.isHidden = true
                 self.tableView.isHidden = false
             }
         }
-        viewModel.refreshTableView = {
-            self.tableView.reloadData()
+        viewModel.refreshTableView = { [weak self] in
+            self?.tableView.reloadData()
         }
     }
 }
@@ -59,7 +60,7 @@ extension TableViewController: UITableViewDelegate, UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "tedTalksCell", for: indexPath) as?  PlayListCell else {
             return UITableViewCell()
         }
-        let talk = viewModel.getTedTalk(indexPath: indexPath)
+        let talk = viewModel.getTedTalk(indexPath: indexPath.row)
         cell.ShowPlaylistInformation(talk)
         return cell
     }
@@ -67,7 +68,7 @@ extension TableViewController: UITableViewDelegate, UITableViewDataSource {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let selectedPath = tableView.indexPathForSelectedRow else { return }
         if segue.identifier == "showDetail", let destination = segue.destination as? DetailViewController {
-            destination.talk = viewModel.getTedTalkDetails(selectedPath: selectedPath)
+            destination.talk = viewModel.getTedTalkDetails(selectedPath: selectedPath.row)
         }
     }
 }
