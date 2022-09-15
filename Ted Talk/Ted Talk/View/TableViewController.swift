@@ -36,11 +36,10 @@ class TableViewController: UIViewController {
     
     func bind() {
         viewModel.loadTableView = {
-
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
-                self.animationView.stop()
-                self.animationView.isHidden = true
-                self.tableView.isHidden = false
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) { [weak self] in
+                self?.animationView.stop()
+                self?.animationView.isHidden = true
+                self?.tableView.isHidden = false
             }
         }
         viewModel.refreshTableView = { [weak self] in
