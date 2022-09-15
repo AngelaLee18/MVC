@@ -6,7 +6,7 @@ target 'Ted Talk' do
   use_frameworks!
 
   # Pods for Ted Talk
-	pod 'lottie-ios'
+  pod 'lottie-ios'
   target 'Ted TalkTests' do
     inherit! :search_paths
     # Pods for testing
