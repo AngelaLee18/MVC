@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct DetailModel {
+struct DetailCellModel {
     let title: String
     let url: String
     let view: Int
@@ -18,7 +18,7 @@ struct DetailModel {
     
     init(talk: TedTalkData) {
         title = talk.title
-        url = talk.url
+        url = talk.url 
         view = talk.views
         date = talk.film_date
         name = talk.name

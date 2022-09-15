@@ -20,17 +20,16 @@ class DetailViewController: UIViewController, WKUIDelegate {
     @IBOutlet weak var webView: WKWebView!
     
     // MARK: - Properties
-    var talk: DetailModel?
+    var talk: DetailCellModel?
     
     // MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
         ShowDetail()
         
-        let myURL = URL(string: talk?.url ?? "")
-        let myRequest = URLRequest(url: myURL!)
+        guard let myURL = URL(string: talk?.url ?? "") else { return }
+        let myRequest = URLRequest(url: myURL)
         webView.load(myRequest)
     }
     
