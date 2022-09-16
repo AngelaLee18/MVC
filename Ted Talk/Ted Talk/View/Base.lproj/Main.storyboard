@@ -17,9 +17,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="IbG-Iu-Wnl">
-                                <rect key="frame" x="197" y="465" width="20" height="20"/>
-                            </activityIndicatorView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="enU-zk-qBW" customClass="AnimationView" customModule="Lottie">
+                                <rect key="frame" x="165.5" y="433.5" width="83" height="83"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="enU-zk-qBW" secondAttribute="height" multiplier="1:1" id="Vue-Mx-kO8"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="animationName" value="loader"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="tgg-3D-hml">
                                 <rect key="frame" x="0.0" y="88" width="414" height="32"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -108,12 +115,13 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="enU-zk-qBW" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="0LX-Yn-c6e"/>
+                            <constraint firstItem="enU-zk-qBW" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="4fC-46-3zv"/>
                             <constraint firstItem="tCg-Or-XUd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="EbO-lA-hPV"/>
-                            <constraint firstItem="IbG-Iu-Wnl" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="Koj-Jo-Tov"/>
+                            <constraint firstItem="enU-zk-qBW" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.2" id="Zib-Uw-GTQ"/>
                             <constraint firstItem="tgg-3D-hml" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="b56-BL-z5u"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="tCg-Or-XUd" secondAttribute="bottom" id="czp-5K-nIT"/>
                             <constraint firstItem="tgg-3D-hml" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="fxO-kY-Its"/>
-                            <constraint firstItem="IbG-Iu-Wnl" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="kjO-5n-wtm"/>
                             <constraint firstItem="tCg-Or-XUd" firstAttribute="top" secondItem="sH5-Bx-5UA" secondAttribute="bottom" id="tFy-cA-yPY"/>
                             <constraint firstItem="tCg-Or-XUd" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" id="u2O-0b-9H9"/>
                             <constraint firstItem="tgg-3D-hml" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="vdw-zO-HtK"/>
@@ -124,7 +132,7 @@
                         <barButtonItem key="backBarButtonItem" title="Back" id="OGJ-da-fRK"/>
                     </navigationItem>
                     <connections>
-                        <outlet property="activityIndicator" destination="IbG-Iu-Wnl" id="yq8-De-eUX"/>
+                        <outlet property="animationView" destination="enU-zk-qBW" id="oUy-nE-MFg"/>
                         <outlet property="pickerView" destination="sH5-Bx-5UA" id="3kP-xu-tPh"/>
                         <outlet property="searchBar" destination="tgg-3D-hml" id="Ti5-by-RZG"/>
                         <outlet property="tableView" destination="tCg-Or-XUd" id="02H-8o-Xiz"/>
@@ -277,6 +285,9 @@
             <point key="canvasLocation" x="28.985507246376812" y="69.642857142857139"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="enU-zk-qBW"/>
+    </designables>
     <resources>
         <image name="TED" width="512" height="512"/>
         <systemColor name="systemBackgroundColor">
