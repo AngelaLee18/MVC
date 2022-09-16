@@ -6,22 +6,22 @@
 //
 
 import Foundation
+import RealmSwift
 
-struct TedTalkData: Codable {
-    var comments: Int
-    var description: String
-    var duration: Int
-    var event: String
-    var film_date: Int
-    var languages: Int
-    var main_speaker: String
-    var name: String
-    var num_speaker: Int
-    var published_date: Int
-    var speaker_occupation: String
-    var tags: [String]
-    var title: String
-    var url: String
-    var views: Int
+@objcMembers class TedTalkData: Object, Codable {
+    @Persisted var comments: Int
+    @Persisted var descrip: String
+    @Persisted var duration: Int
+    @Persisted var event: String
+    @Persisted var film_date: Int
+    @Persisted var languages: Int
+    @Persisted var main_speaker: String
+    @Persisted var name: String
+    @Persisted var num_speaker: Int
+    @Persisted var published_date: Int
+    @Persisted var speaker_occupation: String
+    @Persisted var tags = List<String>()
+    @Persisted var title: String
+    @Persisted var url: String
+    @Persisted var views: Int
 }
-

@@ -7,6 +7,7 @@ target 'Ted Talk' do
 
   # Pods for Ted Talk
   pod 'lottie-ios'
+  pod 'RealmSwift', '~>10'
   target 'Ted TalkTests' do
     inherit! :search_paths
     # Pods for testing

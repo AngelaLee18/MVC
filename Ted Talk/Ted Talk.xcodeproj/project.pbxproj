@@ -14,6 +14,7 @@
 		1005202C28B9465E00A18ABD /* PlayListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1005202B28B9465E00A18ABD /* PlayListCell.swift */; };
 		10274DEE28C2515D009DDEBF /* DetailCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10274DED28C2515D009DDEBF /* DetailCellModel.swift */; };
 		10274DF028C25CFC009DDEBF /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10274DEF28C25CFC009DDEBF /* DetailViewController.swift */; };
+		102E5C0B28D3AF02007245DE /* DataBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102E5C0A28D3AF02007245DE /* DataBase.swift */; };
 		1046F6C628CA224D00699794 /* ViewModelTedTalk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1046F6C528CA224D00699794 /* ViewModelTedTalk.swift */; };
 		1065AEF228B7F288004176D2 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1065AEF128B7F288004176D2 /* DataManager.swift */; };
 		1075213028B555CE009B90F2 /* TedTalkData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1075212F28B555CE009B90F2 /* TedTalkData.swift */; };
@@ -66,6 +67,7 @@
 		1005202B28B9465E00A18ABD /* PlayListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayListCell.swift; sourceTree = "<group>"; };
 		10274DED28C2515D009DDEBF /* DetailCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCellModel.swift; sourceTree = "<group>"; };
 		10274DEF28C25CFC009DDEBF /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		102E5C0A28D3AF02007245DE /* DataBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBase.swift; sourceTree = "<group>"; };
 		1046F6C528CA224D00699794 /* ViewModelTedTalk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelTedTalk.swift; sourceTree = "<group>"; };
 		1065AEE428B7C938004176D2 /* testParse.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = testParse.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1065AEF128B7F288004176D2 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
@@ -173,6 +175,7 @@
 				1075213128B556E5009B90F2 /* Parse.swift */,
 				1065AEF128B7F288004176D2 /* DataManager.swift */,
 				10047B6228C91EEC003935C9 /* ServieProvider.swift */,
+				102E5C0A28D3AF02007245DE /* DataBase.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -551,6 +554,7 @@
 				1075213228B556E5009B90F2 /* Parse.swift in Sources */,
 				10274DF028C25CFC009DDEBF /* DetailViewController.swift in Sources */,
 				10047B6128C91DD4003935C9 /* Protocols.swift in Sources */,
+				102E5C0B28D3AF02007245DE /* DataBase.swift in Sources */,
 				10047B6328C91EEC003935C9 /* ServieProvider.swift in Sources */,
 				1005202C28B9465E00A18ABD /* PlayListCell.swift in Sources */,
 				B3F949BC266A727C00D626BB /* AppDelegate.swift in Sources */,

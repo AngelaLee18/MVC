@@ -20,3 +20,13 @@ enum ServiceError: Error {
 protocol ServiceProtocol {
     func parseTedTalk(_ completion: @escaping (Result<[TedTalkData], ServiceError>) -> Void )
 }
+
+protocol DataBase {
+    func persistData(data: [TedTalkData])
+    func getRealmData() -> [TedTalkData]
+    func clearData(data: [TedTalkData])
+}
+
+protocol DataManagerDelegate {
+    func refreshData()
+}
