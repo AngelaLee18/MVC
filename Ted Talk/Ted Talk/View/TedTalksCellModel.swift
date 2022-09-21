@@ -12,7 +12,7 @@ struct TedTalksCellModel {
     let title: String
     
     init(talk: TedTalkData) {
-        description = talk.description
+        description = talk.descript
         title = talk.title
     }
 }

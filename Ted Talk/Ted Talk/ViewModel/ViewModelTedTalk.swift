@@ -91,3 +91,9 @@ class ViewModelTedTalk {
         }
     }
 }
+
+extension ViewModelTedTalk: DataManagerDelegate {
+    func refreshData(data: [TedTalkData]) {
+            self.tedTalks = data
+    }
+}

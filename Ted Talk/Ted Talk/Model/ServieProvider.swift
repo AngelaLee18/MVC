@@ -36,6 +36,7 @@ class ServiceProvider: ServiceProtocol {
                 let dataFromJson = try jsonDecoder.decode([TedTalkData].self, from: data)
                 completion(.success(dataFromJson))
             }catch {
+                print(error)
                 completion(.failure(.error))
             }
         }.resume()

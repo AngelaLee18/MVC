@@ -8,11 +8,11 @@
 import Foundation
 import RealmSwift
 
-class RealmDB: DataBase {
+public class RealmDB: DataBase {
     
-    private let realm: Realm
+    let realm: Realm
     
-    required init() {
+    public init() {
         do {
             realm = try Realm()
         } catch {
@@ -20,7 +20,9 @@ class RealmDB: DataBase {
             fatalError("Unable to create an Realm instance")
         }
     }
-
+    
+    var isEmpty: Bool { return realm.isEmpty }
+    
     func persistData(data: [TedTalkData]) {
         do {
             try realm.write({
@@ -30,7 +32,6 @@ class RealmDB: DataBase {
             print("Error: \(error)")
         }
     }
-    
     
     func getRealmData() -> [TedTalkData] {
         return Array(realm.objects(TedTalkData.self))

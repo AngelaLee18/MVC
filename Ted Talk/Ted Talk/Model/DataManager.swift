@@ -12,26 +12,41 @@ public class DataManager {
     
     var service: ServiceProtocol
     var dataBase: DataBase
+    private var delegate: DataManagerDelegate?
     
-    init(service: ServiceProtocol = ServiceProvider(), dataBase: DataBase = DataBase()) {
+    init(service: ServiceProtocol = ServiceProvider(), realmDataBase: DataBase = RealmDB()) {
         self.service = service
-        self.dataBase = dataBase
+        dataBase = realmDataBase
     }
     
     //MARK: - Get data of TedTalks
     func getDataTedTalks(completionHandler: @escaping ([TedTalkData]) -> Void) {
-        //Verificar datos de realm y retornar y en backgraound
-        //Realm delegate para refrezcar los datos nuevos
-        //Recargar los datos nuevos
-        service.parseTedTalk() { result in  DispatchQueue.main.async { //GetNewData llamada al funcion
-                switch result {
-                case.success(let data):
-                    completionHandler(data)
-                case.failure(_ ):
-                    completionHandler([])
+        if !(dataBase.isEmpty) {
+            completionHandler(dataBase.getRealmData())
+            self.service.parseTedTalk() { result in
+                DispatchQueue.main.async {
+                    switch result {
+                    case.success(let talks):
+                        self.dataBase.clearData(data: talks)
+                        self.dataBase.persistData(data: talks)
+                        self.delegate?.refreshData(data: talks)
+                    case.failure(_ ):
+                        break
+                    }
+                }
+            }
+        } else {
+            service.parseTedTalk() { result in
+                DispatchQueue.main.async {
+                    switch result {
+                    case.success(let talks):
+                        self.dataBase.persistData(data: talks)
+                        completionHandler(talks)
+                    case.failure(_ ):
+                        completionHandler([])
+                    }
                 }
             }
         }
     }
-    
 }

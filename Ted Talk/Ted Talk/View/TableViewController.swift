@@ -43,7 +43,9 @@ class TableViewController: UIViewController {
             }
         }
         viewModel.refreshTableView = { [weak self] in
-            self?.tableView.reloadData()
+            DispatchQueue.main.async {
+                self?.tableView.reloadData()
+            }
         }
     }
 }
