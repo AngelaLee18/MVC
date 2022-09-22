@@ -12,7 +12,7 @@ public class DataManager {
     
     var service: ServiceProtocol
     var dataBase: DataBase
-    private var delegate: DataManagerDelegate?
+    var delegate: DataManagerDelegate?
     
     init(service: ServiceProtocol = ServiceProvider(), realmDataBase: DataBase = RealmDB()) {
         self.service = service
@@ -27,11 +27,11 @@ public class DataManager {
                 DispatchQueue.main.async {
                     switch result {
                     case.success(let talks):
-                        self.dataBase.clearData(data: talks)
+                        self.dataBase.clearData()
                         self.dataBase.persistData(data: talks)
                         self.delegate?.refreshData(data: talks)
                     case.failure(_ ):
-                        break
+                        return
                     }
                 }
             }

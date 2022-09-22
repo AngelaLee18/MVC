@@ -20,6 +20,8 @@
 		1075213028B555CE009B90F2 /* TedTalkData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1075212F28B555CE009B90F2 /* TedTalkData.swift */; };
 		1075213228B556E5009B90F2 /* Parse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1075213128B556E5009B90F2 /* Parse.swift */; };
 		10998ACE28BFFDE7008839A6 /* SearchBarAndPickerViewTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10998ACD28BFFDE7008839A6 /* SearchBarAndPickerViewTest.swift */; };
+		10B0632228DC91FD008A6F8C /* DataBaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B0632128DC91FD008A6F8C /* DataBaseTest.swift */; };
+		10B0632528DCAF1D008A6F8C /* DataManagerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B0632428DCAF1D008A6F8C /* DataManagerTest.swift */; };
 		10E0FD7628BCFF6D0063E24E /* TedTalksCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E0FD7528BCFF6D0063E24E /* TedTalksCellModel.swift */; };
 		10F7B23D28D0C70100C759DC /* loader.json in Resources */ = {isa = PBXBuildFile; fileRef = 10F7B23B28D0BD3800C759DC /* loader.json */; };
 		5A8C74417371761C5657678F /* Pods_Ted_Talk_Ted_TalkUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9C7D98C0C6210E17C23C0D7 /* Pods_Ted_Talk_Ted_TalkUITests.framework */; };
@@ -76,6 +78,8 @@
 		1075212F28B555CE009B90F2 /* TedTalkData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TedTalkData.swift; sourceTree = "<group>"; };
 		1075213128B556E5009B90F2 /* Parse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parse.swift; sourceTree = "<group>"; };
 		10998ACD28BFFDE7008839A6 /* SearchBarAndPickerViewTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarAndPickerViewTest.swift; sourceTree = "<group>"; };
+		10B0632128DC91FD008A6F8C /* DataBaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBaseTest.swift; sourceTree = "<group>"; };
+		10B0632428DCAF1D008A6F8C /* DataManagerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManagerTest.swift; sourceTree = "<group>"; };
 		10E0FD7528BCFF6D0063E24E /* TedTalksCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TedTalksCellModel.swift; sourceTree = "<group>"; };
 		10F7B23B28D0BD3800C759DC /* loader.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loader.json; sourceTree = "<group>"; };
 		2936030D04B0B69E97A878A3 /* Pods-Ted Talk.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ted Talk.debug.xcconfig"; path = "Target Support Files/Pods-Ted Talk/Pods-Ted Talk.debug.xcconfig"; sourceTree = "<group>"; };
@@ -236,9 +240,11 @@
 			isa = PBXGroup;
 			children = (
 				B3F949D2266A728000D626BB /* Ted_TalkTests.swift */,
-				B3F949D4266A728000D626BB /* Info.plist */,
+				10B0632428DCAF1D008A6F8C /* DataManagerTest.swift */,
+				10B0632128DC91FD008A6F8C /* DataBaseTest.swift */,
 				1065AEF328B7F779004176D2 /* ParseTest.swift */,
 				10998ACD28BFFDE7008839A6 /* SearchBarAndPickerViewTest.swift */,
+				B3F949D4266A728000D626BB /* Info.plist */,
 			);
 			path = "Ted TalkTests";
 			sourceTree = "<group>";
@@ -573,6 +579,8 @@
 			files = (
 				B3F949D3266A728000D626BB /* Ted_TalkTests.swift in Sources */,
 				1005202928B920A200A18ABD /* ParseTest.swift in Sources */,
+				10B0632228DC91FD008A6F8C /* DataBaseTest.swift in Sources */,
+				10B0632528DCAF1D008A6F8C /* DataManagerTest.swift in Sources */,
 				10998ACE28BFFDE7008839A6 /* SearchBarAndPickerViewTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

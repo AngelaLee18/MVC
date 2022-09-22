@@ -37,10 +37,10 @@ public class RealmDB: DataBase {
         return Array(realm.objects(TedTalkData.self))
     }
     
-    func clearData(data: [TedTalkData]) {
+    func clearData() {
         do {
             try realm.write({
-                realm.delete(data)
+                realm.delete(realm.objects(TedTalkData.self))
             })
         } catch {
             print("Error: \(error)")

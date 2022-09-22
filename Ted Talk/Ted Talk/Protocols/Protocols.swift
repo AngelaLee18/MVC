@@ -26,7 +26,7 @@ protocol DataBase {
     var isEmpty: Bool { get }
     func persistData(data: [TedTalkData])
     func getRealmData() -> [TedTalkData]
-    func clearData(data: [TedTalkData])
+    func clearData()
 }
 
 protocol DataManagerDelegate {
