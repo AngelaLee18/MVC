@@ -13,13 +13,13 @@ class TedTalkData: Object, Codable {
     @Persisted var descript: String
     @Persisted var duration: Int
     @Persisted var event: String
-    @Persisted var film_date: Int
+    @Persisted var filmDate: Int
     @Persisted var languages: Int
-    @Persisted var main_speaker: String
+    @Persisted var mainSpeaker: String
     @Persisted var name: String
-    @Persisted var num_speaker: Int
-    @Persisted var published_date: Int
-    @Persisted var speaker_occupation: String
+    @Persisted var numberSpeaker: Int
+    @Persisted var publishedDate: Int
+    @Persisted var speakerOccupation: String
     @Persisted var tags = List<String>()
     @Persisted var title: String
     @Persisted var url: String
@@ -30,32 +30,32 @@ class TedTalkData: Object, Codable {
         case descript = "description"
         case duration
         case event
-        case film_date
+        case filmDate = "film_date"
         case languages
-        case main_speaker
+        case mainSpeaker = "main_speaker"
         case name
-        case num_speaker
-        case published_date
-        case speaker_occupation
+        case numberSpeaker = "num_speaker"
+        case publishedDate = "published_date"
+        case speakerOccupation = "speaker_occupation"
         case tags
         case title
         case url
         case views
     }
     
-    convenience init(comments: Int, descript: String, duration: Int, event: String, film_date: Int, languages: Int, main_speaker: String, name: String, num_speaker: Int, published_date: Int, speaker_occupation: String, tags: [String], title: String, url: String, views: Int) {
+    convenience init(comments: Int, descript: String, duration: Int, event: String, filmDate: Int, languages: Int, mainSpeaker: String, name: String, numberSpeaker: Int, publishedDate: Int, speakerOccupation: String, tags: [String], title: String, url: String, views: Int) {
         self.init()
         self.comments = comments
         self.descript = descript
         self.duration = duration
         self.event = event
-        self.film_date = film_date
+        self.filmDate = filmDate
         self.languages = languages
-        self.main_speaker = main_speaker
+        self.mainSpeaker = mainSpeaker
         self.name = name
-        self.num_speaker = num_speaker
-        self.published_date = published_date
-        self.speaker_occupation = speaker_occupation
+        self.numberSpeaker = numberSpeaker
+        self.publishedDate = publishedDate
+        self.speakerOccupation = speakerOccupation
         self.tags.append(objectsIn: tags)
         self.title = title
         self.url = url

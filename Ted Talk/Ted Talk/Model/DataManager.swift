@@ -6,23 +6,22 @@
 //
 
 import Foundation
-import RealmSwift
 
 public class DataManager {
     
-    var service: ServiceProtocol
-    var dataBase: DataBase
+    private var service: ServiceProtocol
+    private var dataBase: DataBase
     var delegate: DataManagerDelegate?
     
-    init(service: ServiceProtocol = ServiceProvider(), realmDataBase: DataBase = RealmDB()) {
+    init(service: ServiceProtocol = ServiceProvider(), dataBase: DataBase = RealmDB()) {
         self.service = service
-        dataBase = realmDataBase
+        self.dataBase = dataBase
     }
     
     //MARK: - Get data of TedTalks
     func getDataTedTalks(completionHandler: @escaping ([TedTalkData]) -> Void) {
-        if !(dataBase.isEmpty) {
-            completionHandler(dataBase.getRealmData())
+        if !dataBase.isEmpty {
+            completionHandler(dataBase.getData())
             self.service.parseTedTalk() { result in
                 DispatchQueue.main.async {
                     switch result {

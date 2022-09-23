@@ -10,7 +10,7 @@ import RealmSwift
 
 public class RealmDB: DataBase {
     
-    let realm: Realm
+    private let realm: Realm
     
     public init() {
         do {
@@ -33,7 +33,7 @@ public class RealmDB: DataBase {
         }
     }
     
-    func getRealmData() -> [TedTalkData] {
+    func getData() -> [TedTalkData] {
         return Array(realm.objects(TedTalkData.self))
     }
     

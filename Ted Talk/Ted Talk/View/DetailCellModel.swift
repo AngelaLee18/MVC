@@ -20,7 +20,7 @@ struct DetailCellModel {
         title = talk.title
         url = talk.url 
         view = talk.views
-        date = talk.film_date
+        date = talk.filmDate
         name = talk.name
         description = talk.descript
         tags = Array(talk.tags)

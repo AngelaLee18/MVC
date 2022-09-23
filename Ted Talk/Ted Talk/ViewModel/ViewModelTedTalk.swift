@@ -30,7 +30,9 @@ class ViewModelTedTalk {
     //MARK: - Init
     init(dataManager: DataManager = DataManager()) {
         manager = dataManager
+        self.manager.delegate = self
     }
+    
     //MARK: - Closures
     var loadTableView: (() -> ())?
     var refreshTableView: (() -> ())?
@@ -77,7 +79,7 @@ class ViewModelTedTalk {
             case .event:
                 return talk.event.lowercased().contains(searchText.lowercased())
             case .main_speaker:
-                return talk.main_speaker.lowercased().contains(searchText.lowercased())
+                return talk.mainSpeaker.lowercased().contains(searchText.lowercased())
             case .title:
                 return talk.title.lowercased().contains(searchText.lowercased())
             case .name:
@@ -86,7 +88,7 @@ class ViewModelTedTalk {
                 return talk.description.lowercased().contains(searchText.lowercased())
                 
             case .all:
-                return talk.event.lowercased().contains(searchText.lowercased()) || talk.main_speaker.lowercased().contains(searchText.lowercased()) || talk.title.lowercased().contains(searchText.lowercased()) || talk.name.lowercased().contains(searchText.lowercased()) || talk.description.lowercased().contains(searchText.lowercased())
+                return talk.event.lowercased().contains(searchText.lowercased()) || talk.mainSpeaker.lowercased().contains(searchText.lowercased()) || talk.title.lowercased().contains(searchText.lowercased()) || talk.name.lowercased().contains(searchText.lowercased()) || talk.description.lowercased().contains(searchText.lowercased())
             }
         }
     }
@@ -94,6 +96,6 @@ class ViewModelTedTalk {
 
 extension ViewModelTedTalk: DataManagerDelegate {
     func refreshData(data: [TedTalkData]) {
-            self.tedTalks = data
+        self.tedTalks = data
     }
 }

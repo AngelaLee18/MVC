@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import RealmSwift
 
 enum ServiceError: Error {
     case emptyData
@@ -25,7 +24,7 @@ protocol ServiceProtocol {
 protocol DataBase {
     var isEmpty: Bool { get }
     func persistData(data: [TedTalkData])
-    func getRealmData() -> [TedTalkData]
+    func getData() -> [TedTalkData]
     func clearData()
 }
 
