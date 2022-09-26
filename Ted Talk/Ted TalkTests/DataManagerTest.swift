@@ -52,13 +52,9 @@ class DataManagerTest: XCTestCase {
     }
     
     class MockServiceFailure: ServiceProtocol {
-        var talks: [TedTalkData] = [
-            TedTalkData(comments: 10, descript: "description1", duration: 5, event: "event", filmDate: 14, languages: 5, mainSpeaker: "speaker1", name: "name1", numberSpeaker: 1, publishedDate: 4, speakerOccupation: "occupation", tags: ["Children", "education"], title: "title1", url: "url1", views: 32432)]
         func parseTedTalk(_ completion: @escaping (Result<[TedTalkData], ServiceError>) -> Void) {
             completion(.failure(.emptyData))
         }
-        
-        
     }
     
     override func setUpWithError() throws {
